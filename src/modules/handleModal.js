@@ -1,6 +1,6 @@
 const handleModal = (btnModal, mainModal, head) => {
-  const mainModalReject = mainModal.getElementsByClassName("main-modal__close")[0];
-  const mainModalAccept = mainModal.getElementsByClassName("main-modal__open")[0];
+  const mainModalReject = mainModal.getElementsByClassName('main-modal__close')[0];
+  const mainModalAccept = mainModal.getElementsByClassName('main-modal__open')[0];
 
   function scriptExists(url) {
     return document.querySelectorAll(`script[src='${url}']`).length > 0;
@@ -14,7 +14,7 @@ const handleModal = (btnModal, mainModal, head) => {
     };
 
     const openModal = () => {
-      modal.classList.add("main-modal--open");
+      modal.classList.add('main-modal--open');
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       trigger.classList.add('btn-modal--pressed');
     };
