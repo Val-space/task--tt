@@ -1,16 +1,16 @@
-const handleModal = (btnModal, mainModal, head) => {
+const handleModal = (btnModal, mainModal) => {
   const mainModalReject = mainModal.getElementsByClassName('main-modal__close')[0];
   const mainModalAccept = mainModal.getElementsByClassName('main-modal__open')[0];
 
   function scriptExists(url) {
     return document.querySelectorAll(`script[src='${url}']`).length > 0;
   }
-  
+
   function bindModal(trigger, modal, rejectTrigger, acceptTrigger) {
     const closeModal = () => {
       modal.classList.remove('main-modal--open');
       document.getElementsByTagName('html')[0].style.overflow = '';
-      trigger.classList.remove('btnModal--pressed');
+      trigger.classList.remove('btn-modal--pressed');
     };
 
     const openModal = () => {
@@ -38,16 +38,10 @@ const handleModal = (btnModal, mainModal, head) => {
 
       if (!scriptExists('./collect.js')) {
         const fileref = document.createElement('script');
-        fileref.src = './collect.js';
-        head.appendChild(fileref);
+        fileref.src = './collect.js';
+        document.body.appendChild(fileref);
       }
     });
-
-    // modal.addEventListener('click', (e) => {
-    //   if (e.target === modal) {
-    //     closeModal();
-    //   }
-    // });
   }
 
   bindModal(btnModal, mainModal, mainModalReject, mainModalAccept);

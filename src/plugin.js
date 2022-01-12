@@ -3,13 +3,12 @@ import handleResizing from './modules/handleResizing';
 
 const pluginScript = document.getElementById('idward-plugin');
 const isRunning = pluginScript.getAttribute('isRunning');
-const head = document.getElementsByTagName('HEAD')[0];
 
 // // Add style.scsss to html file
-// const link = document.createElement('link');
-// link.rel = 'stylesheet'; 
-// link.href = './style.scss'; 
-// head.appendChild(link);
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = './style.css';
+document.head.appendChild(link);
 
 if (isRunning === 'true') {
   const btnModal = document.createElement('button');
@@ -26,8 +25,9 @@ if (isRunning === 'true') {
       <button type="button" class="main-modal__close">Reject</button>
     </div>
   `;
+
   document.body.appendChild(mainModal);
 
-  handleModal(btnModal, mainModal, head);
+  handleModal(btnModal, mainModal);
   handleResizing();
 }

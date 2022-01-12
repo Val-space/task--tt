@@ -8,7 +8,7 @@ const handleResizing = () => {
     let prevX = e.clientX;
     let prevY = e.clientY;
 
-    function mousemove(e) {
+    function mousemove() {
       const rect = modalWindow.getBoundingClientRect();
 
       if (currentResizer.classList.contains('se')) {
@@ -20,7 +20,7 @@ const handleResizing = () => {
       prevY = e.clientY;
     }
 
-    function mouseup(e) {
+    function mouseup() {
       window.removeEventListener('mousemove', mousemove);
     }
 
